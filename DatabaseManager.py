@@ -61,7 +61,7 @@ def parseGutenbergBook(filename):
             inv_index_token2book[tok].append(book_id)
         else:
             inv_index_token2book[tok] = [book_id]
-    book_info[book_id] = [title, author]
+    book_info[book_id] = [title, author, filename]
     book_inv[book_id] = inv_index
     if author in author_books:
         author_books[author].append(book_id)
