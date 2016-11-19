@@ -48,7 +48,10 @@ if __name__ == '__main__':
     correct, incorrect = 0, 0
     for b in books:
         for i in xrange(TEST_ITERS):
-            test = sample.generateNoisySample(BOOK_DIRECTORY + b)
+            f = open(BOOK_DIRECTORY + b, 'r')
+            raw = f.read()
+            f.close()
+            test = sample.generateNoisySample(raw)
             samp, title, author = test
             print "Testing:", title, "by", author
             best = testSample(samp)
